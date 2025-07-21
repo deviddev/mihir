@@ -21,7 +21,9 @@ class ProcessFeedItem implements ShouldQueue
     public function __construct(
         public Source $source,
         public Item $item
-    ) {}
+    ) {
+        $this->onQueue('feed-processing');
+    }
 
     /**
      * Execute the job.
