@@ -16,8 +16,8 @@ return [
     'cancel' => 'Mégsem',
     'password' => 'Jelszó',
     'logout' => 'Kijelentkezés',
-    'youtube' => 'Videók',
-    'article' => 'Cikkek',
-    'podcast' => 'Podcastok',
-    'all' => 'Összes',
+    'youtube' => 'Video',
+    'article' => 'Cikk',
+    'podcast' => 'Podcast',
+    'all' => 'Mind',
 ];
