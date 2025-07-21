@@ -1,3 +1,5 @@
+@import url('/resources/css/christopheraseidl/cookie-consent/cookie-consent.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

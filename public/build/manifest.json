@@ -56,8 +56,13 @@
     "src": "node_modules/@fontsource/inter/files/inter-vietnamese-400-normal.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CBVZwve8.css",
+    "file": "assets/app-Bpa8TdrD.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/christopheraseidl/cookie-consent/cookie-consent.css": {
+    "file": "assets/cookie-consent-DGCA1Aio.css",
+    "src": "resources/css/christopheraseidl/cookie-consent/cookie-consent.css",
     "isEntry": true
   },
   "resources/js/app.js": {

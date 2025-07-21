@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a62d69bfb26ce7f24e87d364fc289c65",
+    "content-hash": "736f9bbedd27086bc63cea05afaf6315",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -350,6 +350,57 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "christopheraseidl/livewire-cookie-consent",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/christopheraseidl/livewire-cookie-consent.git",
+                "reference": "540cb4192da315756c54a8101c4d5c4f2fbbf9f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/christopheraseidl/livewire-cookie-consent/zipball/540cb4192da315756c54a8101c4d5c4f2fbbf9f9",
+                "reference": "540cb4192da315756c54a8101c4d5c4f2fbbf9f9",
+                "shasum": ""
+            },
+            "require": {
+                "livewire/livewire": "^3.0",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "CookieConsent": "christopheraseidl\\CookieConsent\\Facades\\CookieConsent"
+                    },
+                    "providers": [
+                        "christopheraseidl\\CookieConsent\\CookieConsentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "christopheraseidl\\CookieConsent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Seidl",
+                    "email": "christopheraseidl@gmail.com"
+                }
+            ],
+            "description": "Display a cookie consent notice and cookie policy in Laravel (Livewire + Alpine.js + Tailwind CSS).",
+            "support": {
+                "issues": "https://github.com/christopheraseidl/livewire-cookie-consent/issues",
+                "source": "https://github.com/christopheraseidl/livewire-cookie-consent/tree/v1.1.0"
+            },
+            "time": "2024-08-02T15:43:07+00:00"
         },
         {
             "name": "danharrin/date-format-converter",
