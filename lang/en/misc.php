@@ -16,4 +16,8 @@ return [
     'cancel' => 'Cancel',
     'password' => 'Password',
     'logout' => 'Logout',
+    'youtube' => 'Videos',
+    'article' => 'Articles',
+    'podcast' => 'Podcasts',
+    'all' => 'All',
 ];
