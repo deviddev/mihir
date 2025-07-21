@@ -15,4 +15,5 @@ return [
     'saved' => 'Saved',
     'cancel' => 'Cancel',
     'password' => 'Password',
+    'logout' => 'Logout',
 ];

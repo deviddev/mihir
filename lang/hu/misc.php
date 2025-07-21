@@ -15,4 +15,5 @@ return [
     'saved' => 'Mentve',
     'cancel' => 'Mégsem',
     'password' => 'Jelszó',
+    'logout' => 'Kijelentkezés',
 ];
