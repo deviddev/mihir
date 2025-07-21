@@ -2,7 +2,7 @@
     <div class="fixed py-6 flex flex-col space-y-12 h-screen w-fit">
         <figure class="h-12 flex items-center">
             <a wire:navigate href="{{ auth()->check() ? route('materials.index') : route('home') }}">
-                <img loading="lazy" class="sm:w-52 w-48" src="{{ asset('img/logo.png') }}" alt="Larasense logo">
+                <img loading="lazy" class="sm:w-52 w-48 p-4" src="{{ asset('img/logo.png') }}" alt="Larasense logo">
             </a>
         </figure>
         <div class="space-y-4">
