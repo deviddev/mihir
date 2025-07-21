@@ -45,12 +45,13 @@ class Register extends Component
 
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email:rfc,dns,spoof', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email:rfc,dns,spoof', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'string', 'confirmed', Password::defaults()],
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
         $validated['timezone'] = session()->get('timezone', 'UTC');
+        $validated['language'] = request()->getPreferredLanguage();
 
         event(new Registered($user = User::create($validated)));
 
