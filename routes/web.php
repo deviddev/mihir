@@ -6,9 +6,9 @@ use App\Http\Controllers\UpdateUserTimezoneController;
 use App\Livewire;
 use Illuminate\Support\Facades\Route;
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
-Route::view('/', 'home')->name('home')->middleware('guest');
+Route::view('/', Livewire\FeedBySourceType::class)->name('home')->middleware('guest');
 
 Route::get('home', Livewire\Materials\Index::class)->name('materials.index');
 
