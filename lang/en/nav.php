@@ -8,4 +8,6 @@ return [
     'suggest_sources' => 'Suggest sources',
     'report_bugs' => 'Report bugs',
     'roadmap' => 'Roadmap',
+    'profile' => 'Profile',
+    'source_url' => 'Source URL',
 ];
