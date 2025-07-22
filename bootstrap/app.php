@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Http\Middleware\UpdateUserLastLoginDateTime;
-use App\Http\Middleware\UpdateUserLanguageMiddleware;
 use christopheraseidl\CookieConsent\CookieConsentMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -19,7 +18,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->appendToGroup('web', [
             UpdateUserLastLoginDateTime::class,
             CookieConsentMiddleware::class,
-            UpdateUserLanguageMiddleware::class,
         ]);
 
         $middleware->redirectUsersTo(fn() => route('materials.index'));
