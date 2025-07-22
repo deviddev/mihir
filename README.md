@@ -1,10 +1,23 @@
 <p align="center">
+    <a href="https://mihir.hu" target="_blank"><img src="https://mihir.hu/img/logo.png" width="70%" alt="Mihir logo"></a>
     <a href="https://larasense.com" target="_blank"><img src="https://larasense.com/img/logo.png" width="70%" alt="Larasense logo"></a>
 </p>
 
 <p align="center">
 <a href="https://github.com/nabilhassen/larasense/actions"><img src="https://github.com/nabilhassen/larasense/actions/workflows/test.yml/badge.svg" alt="Test Status"></a>
 </p>
+
+## About Mihir.hu
+
+Mihir.hu is a news aggregator website for Hungarian language. It's a personal project created by [Mihir](https://mihir.hu). Under the hood the website is built with [Laravel](https://laravel.com) and [Livewire](https://livewire.laravel.com) and rely on [Larasense](https://larasense.com) for content aggregation.
+What's changed:
+
+-   add localization support
+-   add hungarian translations
+-   redesign some piece of the UI
+-   add PWA support
+
+The app is open source and can be used for free under the [GNU Affero General Public License](LICENSE.md).
 
 ## About Larasense
 
