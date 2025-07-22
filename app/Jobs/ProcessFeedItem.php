@@ -22,7 +22,7 @@ class ProcessFeedItem implements ShouldQueue
         public Source $source,
         public Item $item
     ) {
-        $this->onQueue('feed-processing');
+        //
     }
 
     /**

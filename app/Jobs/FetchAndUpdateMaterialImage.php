@@ -19,8 +19,9 @@ class FetchAndUpdateMaterialImage implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(public Material $material) {
-        $this->onQueue('image-processing');
+    public function __construct(public Material $material)
+    {
+        //
     }
 
     /**
