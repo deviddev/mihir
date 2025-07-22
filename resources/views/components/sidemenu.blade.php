@@ -66,6 +66,8 @@
                 class="btn btn-sm btn-primary btn-link">{{ __('misc.terms_and_conditions') }}</a>
             <a href="{{ route('privacy') }}"
                 class="btn btn-sm btn-primary btn-link">{{ __('misc.privacy_policy') }}</a>
+            <a href="https://github.com/deviddev/mihir" target="_blank"
+                class="btn btn-sm btn-primary btn-link">Github</a>
         </div>
     </div>
 </div>

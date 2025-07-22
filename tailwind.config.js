@@ -10,7 +10,7 @@ export default {
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
-        "./vendor/christopheraseidl/**/*.blade.php"
+        "./vendor/christopheraseidl/**/*.blade.php",
     ],
 
     plugins: [typography, daisyui],
@@ -20,9 +20,9 @@ export default {
             {
                 light: {
                     ...require("daisyui/src/theming/themes")["light"],
-                    primary: "#EF5A6F",
-                    secondary: "#ffd0d2",
-                    accent: "#ffeff0",
+                    primary: "#ED1B25",
+                    secondary: "#ffa8ad",
+                    accent: "#fde7e8",
                 },
             },
         ],
