@@ -44,4 +44,5 @@ return [
     'redirect_to_source' => 'Ugrás a forrásra',
     'to_bookmark_content' => 'A könyvjelzőkhöz adáshoz',
     'read_post' => 'Cikk olvasása',
+    'you_are_currently_not_connected_to_any_networks' => 'Jelenleg offline vagy.',
 ];
