@@ -1,4 +1,4 @@
-<x-layouts.guest>
+<x-layouts.app>
     <div class="space-y-20">
         <div class="container mx-auto">
             <div class="sm:max-w-3xl sm:mx-auto mx-4 space-y-8">
@@ -167,4 +167,4 @@
         </div>
         <x-footer />
     </div>
-</x-layouts.guest>
+</x-layouts.app>

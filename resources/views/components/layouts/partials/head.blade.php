@@ -40,11 +40,7 @@
 
 <link rel="preload" href="{{ asset('img/logo.png') }}" as="image" fetchpriority="high">
 
-@if (request()->routeIs('home'))
-    <link rel="preload" href="{{ asset('img/light_screenshot.webp') }}" as="image" fetchpriority="high">
-
-    <link rel="preload" href="{{ asset('img/dark_screenshot.webp') }}" as="image" fetchpriority="high">
-@endif
+{{-- @include('components.meta') --}}
 
 <script>
     function toggleDarkMode(params) {
