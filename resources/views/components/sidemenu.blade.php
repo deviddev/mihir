@@ -62,9 +62,10 @@
             <button x-data class="btn btn-sm btn-primary btn-link" x-on:click="$dispatch('open-bug-reports-modal')">
                 {{ __('nav.report_bugs') }}
             </button>
-            <a href="https://x.com/nabilhassen08" class="btn btn-sm btn-primary btn-link" target="_blank">
-                {{ __('nav.roadmap') }}
-            </a>
+            <a href="{{ route('terms') }}"
+                class="btn btn-sm btn-primary btn-link">{{ __('misc.terms_and_conditions') }}</a>
+            <a href="{{ route('privacy') }}"
+                class="btn btn-sm btn-primary btn-link">{{ __('misc.privacy_policy') }}</a>
         </div>
     </div>
 </div>
