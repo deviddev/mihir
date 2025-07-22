@@ -7,7 +7,7 @@
     <meta property="og:description" content="Mihir.hu friss hírek, történések, események egy helyen" /" />
     <meta name="description" content="Mihir.hu friss hírek, történések, események egy helyen" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en" />
+    <meta property="og:locale" content="hu" />
     <meta property="og:image" content="{{ asset('img/og_image.webp') }}" />
     <meta property="og:url" content="{{ url()->current() }}" />
 
