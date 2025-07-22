@@ -70,7 +70,7 @@
             </h2>
         </div>
         <div class="flex justify-between items-center">
-            <div class="relative lg:tooltip" data-tip="Like this post" x-data="likeMaterial(
+            <div class="relative lg:tooltip" data-tip="{{ __('misc.like_post') }}" x-data="likeMaterial(
                 '{{ $material->slug }}',
                 @js($this->isLiked),
                 @js(auth()->check()),
@@ -86,7 +86,7 @@
                     </span>
                 </button>
             </div>
-            <div class="relative lg:tooltip" data-tip="Disike this post" x-data="dislikeMaterial(
+            <div class="relative lg:tooltip" data-tip="{{ __('misc.dislike_post') }}" x-data="dislikeMaterial(
                 '{{ $material->slug }}',
                 @js($this->isDisliked),
                 @js(auth()->check()),
@@ -99,7 +99,7 @@
                         }" />
                 </button>
             </div>
-            <div class="relative lg:tooltip" data-tip="Bookmark" x-data="bookmarkMaterial(
+            <div class="relative lg:tooltip" data-tip="{{ __('misc.bookmark') }}" x-data="bookmarkMaterial(
                 '{{ $material->slug }}',
                 @js($this->isBookmarked),
                 @js(auth()->check()),
@@ -113,7 +113,8 @@
                 </button>
             </div>
             <div class="relative lg:tooltip" x-bind:class="{ 'lg:tooltip-open': isCopied }"
-                x-bind:data-tip="isCopied ? 'Link Copied!' : 'Copy Link'" x-data="copyLink('{{ $material->url }}')">
+                x-bind:data-tip="isCopied ? @js(__('misc.link_copied')) : @js(__('misc.copy_link'))"
+                x-data="copyLink('{{ $material->url }}')">
                 <button class="inline-flex" x-on:click="copy">
                     <x-heroicon-o-link class="inline-flex size-6 hover:stroke-primary"
                         x-bind:class="{
@@ -160,7 +161,7 @@
                     </button>
                 </div>
             @elseif ($material->isArticle())
-                <div class="relative lg:tooltip lg:tooltip-left" data-tip="Redirect to source">
+                <div class="relative lg:tooltip lg:tooltip-left" data-tip="{{ __('misc.redirect_to_source') }}">
                     <a class="inline-flex" href="{{ $material->urlWithUtms }}" target="_blank"
                         x-on:click="$wire.redirected()">
                         <x-heroicon-o-arrow-top-right-on-square

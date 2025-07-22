@@ -16,7 +16,7 @@ export const dislikeMaterial = (slug, isDisliked, isUserAuthenticated) => ({
     toggleDislike() {
         if (!this.isUserAuthenticated) {
             this.$dispatch("open-login-required-modal", {
-                message: "To dislike content",
+                message: "Eltávolítom a kedvencekből",
             });
 
             return;

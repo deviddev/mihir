@@ -24,7 +24,7 @@ export const likeMaterial = (
     toggleLike() {
         if (!this.isUserAuthenticated) {
             this.$dispatch("open-login-required-modal", {
-                message: "To like content",
+                message: "Kedvencekhez adom",
             });
 
             return;

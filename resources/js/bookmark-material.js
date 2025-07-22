@@ -16,7 +16,7 @@ export const bookmarkMaterial = (slug, isBookmarked, isUserAuthenticated) => ({
     toggleBookmark() {
         if (!this.isUserAuthenticated) {
             this.$dispatch("open-login-required-modal", {
-                message: "To bookmark content",
+                message: "A könyvjelzőkhöz adáshoz",
             });
 
             return;
