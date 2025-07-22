@@ -1,7 +1,5 @@
 <x-layouts.guest>
-    <x-slot:title>Adatkezelési tájékoztató</x-slot>
     <div class="space-y-20">
-        <x-navbar />
         <div class="container mx-auto">
             <div class="sm:max-w-3xl sm:mx-auto mx-4 space-y-8">
                 <h1 class="font-semibold text-2xl">
