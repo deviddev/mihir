@@ -1,73 +1,110 @@
 <div id="cookie-policy">
     <livewire:cookie-consent-changer />
 
-    <h1><strong>{{ config('app.name') }}</strong> advises about the use of cookies on its website: <a href="{{ config('app.url') }}">{{ config('app.url') }}.</a></h1>
+    <h1><strong>{{ config('app.name') }}</strong> tájékoztatást ad a sütik használatáról weboldalán: <a
+            href="{{ config('app.url') }}">{{ config('app.url') }}.</a></h1>
 
-    <h2>What are cookies?</h2>
+    <h2>Mik azok a sütik?</h2>
 
-    <p>Cookies are files that can be downloaded to your computer by websites. They are tools that play an essential role in the provision of many information society services. Among other things, they allow a website to store and retrieve information about the browsing habits of a user or their computer and, depending on the information obtained, they can be used to recognize the user and improve the service offered.</p>
+    <p>A sütik olyan fájlok, amelyeket a weboldalak letölthetnek a számítógépedre. Ezek olyan eszközök, amelyek alapvető
+        szerepet játszanak számos információs társadalmi szolgáltatás nyújtásában. Többek között lehetővé teszik a
+        weboldal számára, hogy információt tároljon és kérjen le a felhasználó vagy a számítógép böngészési szokásairól,
+        és a megszerzett információktól függően felhasználhatók a felhasználó azonosítására és a szolgáltatás
+        fejlesztésére.</p>
 
-    <h2>Types of cookies</h2>
+    <h2>A sütik típusai</h2>
 
-    <p>Depending on who is the entity that manages the domain from which cookies are sent and treat the data obtained can distinguish two types:</p>
-
-    <ol>
-        <li>First-party cookies: those that are sent to the user's terminal equipment from a computer or domain managed by the editor itself and from which the service requested by the user is provided.</li>
-        <li>Third-party cookies: those that are sent to the user's terminal equipment from a computer or domain that is not managed by the editor, but by another entity that processes the data obtained through the cookies.</li>
-    </ol>
-
-    <p>In the event that the cookies are installed from a computer or domain managed by the editor itself but the information collected through them is managed by a third party, they cannot be considered first-party cookies.</p>
-
-    <p>There is also a second classification according to the period of time they remain on the website. These may be:</p>
+    <p>Attól függően, hogy ki az az entitás, amely a domain kezelését végzi, ahonnan a sütik érkeznek, és ki kezeli az
+        így nyert adatokat, két típus különböztethető meg:</p>
 
     <ol>
-        <li>Session cookies: designed to collect and store data while the user accesses a web page. They are usually used to store information that is only interesting to keep for the provision of the service requested by the user on a single occasion (e.g. a list of products purchased).</li>
-        <li>Persistent cookies: the data remains stored in the terminal and can be accessed and processed for a period defined by the cookie manager, which can range from a few minutes to several years.</li>
+        <li>Saját sütik: ezek a felhasználó eszközére olyan számítógépről vagy doménről kerülnek elküldésre, amelyet
+            maga a szerkesztő kezel, és amelyről a felhasználó által kért szolgáltatás biztosított.</li>
+        <li>Harmadik féltől származó sütik: ezek a felhasználó eszközére olyan számítógépről vagy doménről kerülnek
+            elküldésre, amelyet nem a szerkesztő kezel, hanem egy másik entitás, amely az így nyert adatokat
+            feldolgozza.</li>
     </ol>
 
-    <p>Finally, there is another classification according to the purpose for which the data obtained are processed:</p>
+    <p>Amennyiben a sütik olyan számítógépről vagy doménről kerülnek telepítésre, amelyet maga a szerkesztő kezel, de az
+        információkat egy harmadik fél kezeli, ezek nem tekinthetők saját sütiknek.</p>
+
+    <p>Van egy másik osztályozás is, az alapján, hogy mennyi ideig maradnak a sütik a weboldalon. Ezek lehetnek:</p>
 
     <ol>
-        <li>Technical cookies: those that allow the user to navigate through a website, platform or application and the use of the different options or services that exist in it such as, for example, control traffic and data communication, identify the session, access parts of restricted access, remember the elements that make up an order, make the buying process of an order, make the application for registration or participation in an event, use security features during navigation, store content for broadcasting videos or sound or share content through social networks.</li>
-        <li>Customization cookies: allow the user to access the service with some general characteristics predefined according to a series of criteria in the user's terminal such as the language, the type of browser through which you access the service, the locale from which you access the service, etc.</li>
-        <li>Analysis cookies: allow the responsible for them, monitoring and analyzing the behavior of users of the websites to which they are linked. The information collected through this type of cookies is used to measure the activity of the websites, application or platform and for the elaboration of browsing profiles of the users of these sites, applications and platforms, in order to introduce improvements based on the analysis of the usage data of the users of the service.</li>
-        <li>Advertising cookies: allow the management, in the most effective way possible, of advertising spaces.</li>
-        <li>Behavioral advertising cookies: store information on the behavior of users obtained through the continuous observation of their browsing habits, which allows the development of a specific profile to display advertising based on the same.</li>
-        <li>Cookies external social networks: used so that visitors can interact with the content of different social platforms (facebook, youtube, twitter, linkedIn, etc.) and that are generated only for users of such social networks. The conditions of use of these cookies and the information collected is regulated by the privacy policy of the corresponding social platform.</li>
+        <li>Munkamenet sütik: az adatokat csak a weboldalhoz való hozzáférés ideje alatt gyűjtik és tárolják. Általában
+            olyan információk tárolására használják, amelyek csak egyszeri szolgáltatásnyújtás során fontosak (pl.
+            vásárolt termékek listája).</li>
+        <li>Tartós sütik: az adatok hosszabb ideig tárolódnak az eszközön, és a süti kezelője által meghatározott ideig
+            hozzáférhetők és feldolgozhatók, ami néhány perctől akár több évig is terjedhet.</li>
     </ol>
 
-    <h2>Disabling and deleting cookies</h2>
+    <p>Végül létezik egy osztályozás a felhasználás célja szerint is:</p>
 
-    <p>You have the option to allow, block or delete cookies installed on your computer by configuring the browser options installed on your computer. By disabling cookies, some of the available services may no longer be operational. The way to disable cookies is different for each browser, but can usually be done from the Tools or Options menu.</p>
+    <ol>
+        <li>Technikai sütik: lehetővé teszik a felhasználó számára a weboldalon való navigálást, valamint az ott
+            elérhető különféle funkciók és szolgáltatások használatát, például: adatforgalom és kommunikáció kezelése,
+            munkamenet azonosítása, védett területekhez való hozzáférés, rendelés elemeinek megjegyzése, vásárlási
+            folyamat lebonyolítása, regisztrációs vagy eseményrészvételi űrlapok kezelése, biztonsági funkciók
+            használata, videó- vagy hangtartalom tárolása, tartalommegosztás közösségi médián keresztül.</li>
+        <li>Testreszabási sütik: lehetővé teszik, hogy a felhasználó a szolgáltatáshoz előre beállított jellemzőkkel
+            férjen hozzá, például nyelv, böngésző típusa vagy földrajzi elhelyezkedés alapján.</li>
+        <li>Elemzési sütik: lehetővé teszik, hogy a kezelő figyelemmel kísérje és elemezze a weboldalak felhasználóinak
+            viselkedését. Az ilyen típusú sütik által gyűjtött információkat a weboldalak, alkalmazások vagy platformok
+            aktivitásának mérésére, valamint a felhasználói profilok készítésére használják a szolgáltatás fejlesztése
+            érdekében.</li>
+        <li>Reklámsütik: lehetővé teszik a hirdetési helyek leghatékonyabb kezelését.</li>
+        <li>Viselkedésalapú reklámsütik: tárolják a felhasználók viselkedéséről szóló információkat, amelyeket a
+            böngészési szokásaik folyamatos megfigyelésével nyernek, így személyre szabott hirdetéseket jeleníthetnek
+            meg.</li>
+        <li>Külső közösségi hálózati sütik: lehetővé teszik a látogatók számára, hogy kapcsolatba lépjenek különböző
+            közösségi platformok tartalmaival (Facebook, YouTube, Twitter, LinkedIn stb.). Ezek a sütik csak a közösségi
+            hálózatok felhasználói számára generálódnak, és használatukat az adott platform adatvédelmi szabályzata
+            szabályozza.</li>
+    </ol>
 
-    <p>You can also consult the browser's Help menu where you can find instructions. The user may at any time choose which cookies he/she wants to operate on this website. You can allow, block or delete cookies installed on your computer by configuring the options of the browser installed on your computer:</p>
+    <h2>Sütik letiltása és törlése</h2>
+
+    <p>Lehetősége van arra, hogy engedélyezze, blokkolja vagy törölje a számítógépén telepített sütiket a böngésző
+        beállításain keresztül. A sütik letiltása esetén bizonyos szolgáltatások nem biztos, hogy megfelelően működnek.
+        A sütik letiltásának módja böngészőnként eltérő, de általában az Eszközök vagy Beállítások menüben található
+        meg.</p>
+
+    <p>További információt a böngésző súgójában találhat. A felhasználó bármikor kiválaszthatja, hogy mely sütiket
+        engedélyezi ezen a weboldalon. A sütik engedélyezését, blokkolását vagy törlését a számítógépen telepített
+        böngésző beállításaiban végezheti el:</p>
 
     <ul>
-        <li><a href="{{ __('cookie-consent::links.microsoft_cookie_link') }}" target="_blank">Microsoft Internet Explorer or Microsoft Edge</a></li>
+        <li><a href="{{ __('cookie-consent::links.microsoft_cookie_link') }}" target="_blank">Microsoft Internet Explorer
+                vagy Microsoft Edge</a></li>
         <li><a href="{{ __('cookie-consent::links.firefox_cookie_link') }}" target="_blank">Mozilla Firefox</a></li>
         <li><a href="{{ __('cookie-consent::links.chrome_cookie_link') }}" target="_blank">Chrome</a></li>
         <li><a href="{{ __('cookie-consent::links.safari_cookie_link') }}" target="_blank">Safari</a></li>
         <li><a href="{{ __('cookie-consent::links.opera_cookie_link') }}" target="_blank">Opera</a></li>
     </ul>
 
-    <h2>Statement of cookies used on {{ config('app.url') }}</h2>
+    <h2>Használt sütik a(z) {{ config('app.url') }} oldalon</h2>
 
-    <p>The cookies we use are the following:</p>
+    <p>Az általunk használt sütik a következők:</p>
 
     <ul>
-        <li>"cas_laravel_cookie_consent," to detect the acceptance or rejection of the cookie policy, with a duration of either one year (in case of positive answer) or one month (in case of negative answer).</li>
-        <li>"XSRF-TOKEN," to protect the web page against XSS attacks.</li>
+        <li>"cas_laravel_cookie_consent" – annak érzékelésére szolgál, hogy a felhasználó elfogadta-e a sütik
+            használatát. Élettartama: pozitív válasz esetén egy év, negatív esetén egy hónap.</li>
+        <li>"XSRF-TOKEN" – a weboldal védelmét szolgálja XSS támadások ellen.</li>
     </ul>
 
-    <h2>Acceptance of cookie policy</h2>
+    <h2>A sütik elfogadása</h2>
 
-    <p>{{ config('app.name') }} assumes that you accept the use of cookies. However, it displays information about its cookie policy at the bottom or top of any page of the portal with each login in order to make you aware of it.</p>
+    <p>{{ config('app.name') }} feltételezi, hogy Ön elfogadja a sütik használatát. Ugyanakkor minden bejelentkezéskor
+        az oldal tetején vagy alján tájékoztatja Önt a süti szabályzatról annak érdekében, hogy tudomást szerezzen róla.
+    </p>
 
-    <p>In view of this information it is possible to carry out the following actions:</p>
+    <p>A fenti információk ismeretében az alábbi műveletek hajthatók végre:</p>
 
     <ol>
-        <li>Accept cookies. This notice will not be displayed again when accessing any page of the portal during the current session.</li>
-        <li>Reject or close. The warning is hidden.</li>
-        <li>Modify your settings. By visiting the cookie policy of <a href="{{ config('app.url') }}">{{ config('app.url') }}</a>, you may accept or reject the use of cookies.</li>
+        <li>A sütik elfogadása: ebben az esetben az értesítés nem jelenik meg újra a portál bármely oldalának
+            megtekintésekor az aktuális munkamenet során.</li>
+        <li>Elutasítás vagy bezárás: az értesítés eltűnik.</li>
+        <li>Beállítások módosítása: a(z) <a href="{{ config('app.url') }}">{{ config('app.url') }}</a> süti
+            szabályzatának megtekintésével lehetősége van a sütik használatának elfogadására vagy elutasítására.</li>
     </ol>
 </div>
