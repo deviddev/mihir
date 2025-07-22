@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::view('/', Livewire\FeedBySourceType::class)->name('home')->middleware('guest');
+Route::get('/', Livewire\Materials\Index::class)->name('home');
 
 Route::get('home', Livewire\Materials\Index::class)->name('materials.index');
 
