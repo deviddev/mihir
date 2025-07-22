@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html
-    class="scroll-smooth"
-    lang="{{ str_replace('_', '-', app()->getLocale()) }}"
->
+<html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     @include('components.layouts.partials.head')
 </head>
 
 <body class="antialiased dark:bg-black dark:text-stone-300 text-stone-800 min-h-screen">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLPLQVRV" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="container mx-auto">
         <div class="flex justify-center lg:gap-x-16 max-lg:mx-4">
