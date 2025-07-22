@@ -51,7 +51,7 @@ class Register extends Component
 
         $validated['password'] = Hash::make($validated['password']);
         $validated['timezone'] = session()->get('timezone', 'UTC');
-        $validated['language'] = request()->getPreferredLanguage();
+        $validated['language'] = str(request()->getPreferredLanguage())->before('_')->toString();
 
         event(new Registered($user = User::create($validated)));
 

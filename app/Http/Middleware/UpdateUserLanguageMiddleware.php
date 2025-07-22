@@ -18,7 +18,7 @@ class UpdateUserLanguageMiddleware
         if (auth()->check()) {
             app()->setLocale(auth()->user()->language);
         } else {
-            app()->setLocale($request->getPreferredLanguage());
+            app()->setLocale(str($request->getPreferredLanguage())->before('_')->toString());
         }
 
         return $next($request);
