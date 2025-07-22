@@ -7,13 +7,11 @@
 <meta name="theme-color" />
 
 @guest
-    <meta property="og:title" content="Larasense - {{ $title ?? '' }}" />
+    <meta property="og:title" content="Mihir.hu - {{ $title ?? '' }}" />
 
-    <meta property="og:description"
-        content="Stay updated on Laravel news, trends, and updates with curated content from top blogs, YouTube, and podcasts—all in a sleek, user-friendly design." />
+    <meta property="og:description" content="Mihir.hu friss hírek, történések, események egy helyen" /" />
 
-    <meta name="description"
-        content="Stay updated on Laravel news, trends, and updates with curated content from top blogs, YouTube, and podcasts—all in a sleek, user-friendly design." />
+    <meta name="description" content="Mihir.hu friss hírek, történések, események egy helyen" />
 
     <meta property="og:type" content="website" />
 
@@ -29,10 +27,9 @@
 
     <meta name="twitter:creator" content="@nabilhassen08" />
 
-    <meta name="twitter:title" content="Larasense - {{ $title ?? '' }}" />
+    <meta name="twitter:title" content="Mihir.hu - {{ $title ?? '' }}" />
 
-    <meta name="twitter:description"
-        content="Stay updated on Laravel news, trends, and updates with curated content from top blogs, YouTube, and podcasts—all in a sleek, user-friendly design." />
+    <meta name="twitter:description" content="Mihir.hu friss hírek, történések, események egy helyen" />
 
     <meta name="twitter:image" content="{{ asset('img/og_image.webp') }}" />
 @endguest
@@ -76,16 +73,23 @@
 @vite('resources/css/app.css')
 
 @production
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XS5G6ZQC5P"></script>
+    <!-- Google Tag Manager -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-XS5G6ZQC5P');
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })
+        (window, document, 'script', 'dataLayer', 'GTM-MLPLQVRV');
     </script>
+    <!-- End Google Tag Manager -->
 @endproduction
