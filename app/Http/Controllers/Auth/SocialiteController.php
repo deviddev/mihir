@@ -39,7 +39,7 @@ class SocialiteController
                 'password' => Str::random(),
                 'avatar_url' => $user->avatar,
                 'timezone' => session()->get('timezone', 'UTC'),
-                'language' => $user->locale ?? config('app.locale'),
+                'language' => config('app.locale'),
             ]);
         } catch (UniqueConstraintViolationException $exception) {
             throw ValidationException::withMessages([

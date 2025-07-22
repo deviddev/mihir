@@ -16,6 +16,12 @@ class UpdateUserLanguageMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (auth()->check()) {
+            if (str($request->getPreferredLanguage())->before('_')->toString() !== auth()->user()->language) {
+                auth()->user()->update([
+                    'language' => str($request->getPreferredLanguage())->before('_')->toString(),
+                ]);
+            }
+
             app()->setLocale(auth()->user()->language);
         } else {
             app()->setLocale(str($request->getPreferredLanguage())->before('_')->toString());
