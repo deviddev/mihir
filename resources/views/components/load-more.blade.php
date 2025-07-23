@@ -2,7 +2,7 @@
 
 <div class="py-8">
     @if ($paginator->hasMorePages() && $perPage < config('feeds.max_per_page'))
-        <div x-intersect.margin.75%.debounce.500ms="$wire.loadMore()" class="flex justify-center">
+        <div x-intersect.margin.75%="$wire.loadMore()" class="flex justify-center">
             <div wire:loading wire:target="loadMore">
                 <x-heroicon-o-arrow-path class="size-6 animate-spin stroke-primary" />
             </div>
