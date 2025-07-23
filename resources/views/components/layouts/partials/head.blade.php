@@ -67,6 +67,7 @@
         gtag('config', 'G-GK93ZW79K1');
     </script>
 
+    <!-- Google adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5945306093036759"
         crossorigin="anonymous"></script>
 @endproduction
