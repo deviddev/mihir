@@ -6,6 +6,7 @@ namespace App\Livewire\Materials;
 
 use App\Livewire\Traits\CanLoadMore;
 use App\Models\Material;
+use App\Models\MaterialCategory;
 use Illuminate\Http\Request;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -24,11 +25,13 @@ class Index extends Component
 
     public function render(Request $request)
     {
+        $category = MaterialCategory::where('slug', $request->category)->first();
+
         return view('livewire.materials.index', [
             'materials' => Material::displayed()
                 ->latest('published_at')
-                ->when($request->category, function ($query) use ($request) {
-                    $query->where('category_id', $request->category);
+                ->when($request->category, function ($query) use ($category) {
+                    $query->where('category_id', $category->id);
                 })
                 ->select([
                     'id',

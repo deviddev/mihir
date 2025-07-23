@@ -24,7 +24,7 @@ class Categories extends Component
     public function render(): View|Closure|string
     {
         $categories = Cache::remember('categories', 60 * 60, function () {
-            return MaterialCategory::select(['id', 'name'])
+            return MaterialCategory::select(['id', 'name', 'slug'])
                 ->whereHas('materials')
                 ->withCount('materials')
                 ->orderBy('materials_count', 'desc')
