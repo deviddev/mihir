@@ -51,4 +51,8 @@ return [
     'install_pwa' => 'Mihir Applikáció telepítése',
     'install' => 'Telepítés',
     'close' => 'Bezárás',
+    'email_password_reset_link' => 'Jelszó visszaállítási link küldése',
+    'just_remembered' => 'Mégis emlékeszel?',
+    'we_have_emailed_your_password_reset_link' => 'Jelszó visszaállítási link elküldve.',
+    'forgot_your_password' => 'Elfelejtetted a jelszavad? Semmi gond, e-mailben küldjük a visszaállítási linket.',
 ];

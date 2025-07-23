@@ -51,4 +51,8 @@ return [
     'install_pwa' => 'Install Mihir Application',
     'install' => 'Install',
     'close' => 'Close',
+    'email_password_reset_link' => 'Email Password Reset Link',
+    'just_remembered' => 'Just remembered?',
+    'we_have_emailed_your_password_reset_link' => 'We have emailed your password reset link.',
+    'forgot_your_password' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
 ];
