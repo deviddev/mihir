@@ -51,16 +51,9 @@
                             </button>
                         </li>
                         <li class="lg:hidden">
-                            <a href="https://x.com/nabilhassen08"
-                                class="hover:bg-accent dark:hover:bg-black active:!bg-accent dark:active:!bg-black focus:!bg-accent dark:focus:!bg-black active:!text-inherit"
-                                target="_blank">
-                                {{ __('nav.roadmap') }}
-                            </a>
-                        </li>
-                        <li class="lg:hidden">
                             <button x-data x-cloak
                                 class="hover:bg-accent dark:hover:bg-black active:!bg-accent dark:active:!bg-black focus:!bg-accent dark:focus:!bg-black active:!text-inherit"
-                                x-text="$store.themeMode.isDark() ? 'Light Mode' : 'Dark Mode'"
+                                x-text="$store.themeMode.isDark() ? '{{ __('misc.light_mode') }}' : '{{ __('misc.dark_mode') }}'"
                                 x-on:click="$store.themeMode.toggle()"></button>
                         </li>
                         <li>

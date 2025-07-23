@@ -45,4 +45,6 @@ return [
     'to_bookmark_content' => 'A könyvjelzőkhöz adáshoz',
     'read_post' => 'Cikk olvasása',
     'you_are_currently_not_connected_to_any_networks' => 'Jelenleg offline vagy.',
+    'light_mode' => 'Világos mód',
+    'dark_mode' => 'Sötét mód',
 ];
