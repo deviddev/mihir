@@ -9,6 +9,7 @@ use App\Jobs\FetchAndUpdateMaterialImage;
 use App\Models\Material;
 use App\Models\MaterialCategory;
 use App\Models\Source;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class CreateMaterial
@@ -38,6 +39,8 @@ class CreateMaterial
             if ($materialData->category) {
                 $materialCategory = MaterialCategory::firstOrCreate(['name' => $materialData->category]);
                 $material->category()->associate($materialCategory);
+                Cache::forget('categories');
+                $material->save();
             }
 
             if (filled($material->image_url) && $material->isArticle()) {
