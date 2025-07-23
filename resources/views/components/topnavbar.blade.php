@@ -2,7 +2,7 @@
     <div class="flex justify-between items-center">
         <figure class="lg:hidden">
             <a wire:navigate href="{{ auth()->check() ? route('materials.index') : route('home') }}">
-                <img loading="lazy" class="w-8" src="{{ asset('favicon.png') }}" alt="Larasense logo">
+                <img loading="lazy" class="w-8" src="{{ asset('favicon.png') }}" alt="Mihir logo">
             </a>
         </figure>
         <div class="w-8/12">

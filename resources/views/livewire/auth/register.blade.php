@@ -2,7 +2,7 @@
     <div class="sm:max-w-sm sm:mx-auto mx-4 py-8 space-y-6">
         <figure>
             <a wire:navigate href="{{ route('home') }}">
-                <img loading="lazy" class="w-48 mx-auto" src="{{ asset('img/logo.png') }}" alt="Larasense logo">
+                <img loading="lazy" class="w-48 mx-auto" src="{{ asset('img/logo.png') }}" alt="Mihir logo">
             </a>
         </figure>
         <h1 class="text-center text-xl font-semibold">

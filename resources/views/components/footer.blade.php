@@ -2,7 +2,7 @@
     <div class="py-8 max-sm:mx-4">
         <div class="flex max-sm:flex-col justify-between sm:items-center">
             <figure>
-                <img loading="lazy" class="w-52" src="{{ asset('img/logo.png') }}" alt="Larasense logo">
+                <img loading="lazy" class="w-52" src="{{ asset('img/logo.png') }}" alt="Mihir logo">
             </figure>
         </div>
         <hr class="mt-8 mb-4 bg-stone-100">

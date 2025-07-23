@@ -66,10 +66,10 @@
     <div
         class="mockup-window overflow-hidden max-sm:ml-4 shadow-2xl shadow-primary/30 bg-white dark:bg-stone-900 border border-stone-100 dark:border-none max-sm:rounded-none max-sm:rounded-tl-box sm:max-w-6xl sm:mx-auto">
         <figure class="border-t border-stone-100 dark:border-none">
-            <img loading="lazy" src="{{ asset('/img/light_screenshot.webp') }}" alt="Larasense feed screenshoot"
+            <img loading="lazy" src="{{ asset('/img/light_screenshot.webp') }}" alt="Mihir feed screenshoot"
                 class="max-sm:max-w-4xl dark:hidden">
 
-            <img loading="lazy" src="{{ asset('/img/dark_screenshot.webp') }}" alt="Larasense feed screenshoot"
+            <img loading="lazy" src="{{ asset('/img/dark_screenshot.webp') }}" alt="Mihir feed screenshoot"
                 class="max-sm:max-w-4xl hidden dark:block">
         </figure>
     </div>

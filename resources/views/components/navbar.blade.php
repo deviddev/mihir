@@ -20,7 +20,7 @@
                 </ul>
             </div>
             <a wire:navigate href="{{ route('home') }}" class="btn btn-ghost text-xl hover:!bg-inherit max-lg:hidden">
-                <img loading="lazy" class="sm:w-52 w-48" src="{{ asset('img/logo.png') }}" alt="Larasense logo">
+                <img loading="lazy" class="sm:w-52 w-48" src="{{ asset('img/logo.png') }}" alt="Mihir logo">
             </a>
         </div>
         <div class="navbar-center">
@@ -33,7 +33,7 @@
                 </li>
             </ul>
             <a wire:navigate href="{{ route('home') }}" class="btn btn-ghost text-xl hover:!bg-inherit lg:hidden">
-                <img loading="lazy" class="sm:w-52 max-w-40" src="{{ asset('img/logo.png') }}" alt="Larasense logo">
+                <img loading="lazy" class="sm:w-52 max-w-40" src="{{ asset('img/logo.png') }}" alt="Mihir logo">
             </a>
         </div>
         <div class="navbar-end gap-x-2">
