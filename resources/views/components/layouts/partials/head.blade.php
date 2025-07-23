@@ -1,24 +1,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta property="og:title" content="{{ config('app.name') }} - {{ $title ?? '' }}" />
+<meta property="og:description" content="{{ __('misc.page_description') }}" />
+<meta name="description" content="{{ __('misc.page_description') }}" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="hu" />
+<meta property="og:image" content="{{ asset('img/og_image.webp') }}" />
+<meta property="og:url" content="{{ url()->current() }}" />
 
-@guest
-    <meta property="og:title" content="Mihir.hu - {{ $title ?? '' }}" />
-    <meta property="og:description" content="Mihir.hu friss hírek, történések, események egy helyen" /" />
-    <meta name="description" content="Mihir.hu friss hírek, történések, események egy helyen" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="hu" />
-    <meta property="og:image" content="{{ asset('img/og_image.webp') }}" />
-    <meta property="og:url" content="{{ url()->current() }}" />
+<link rel="canonical" href="{{ url()->current() }}" />
 
-    <link rel="canonical" href="{{ url()->current() }}" />
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@nabilhassen08" />
-    <meta name="twitter:title" content="Mihir.hu - {{ $title ?? '' }}" />
-    <meta name="twitter:description" content="Mihir.hu friss hírek, történések, események egy helyen" />
-    <meta name="twitter:image" content="{{ asset('img/og_image.webp') }}" />
-@endguest
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@nabilhassen08" />
+<meta name="twitter:title" content="{{ config('app.name') }} - {{ $title ?? '' }}" />
+<meta name="twitter:description" content="{{ __('misc.page_description') }}" />
+<meta name="twitter:image" content="{{ asset('img/og_image.webp') }}" />
 
 <title>{{ config('app.name') }} - {{ $title ?? '' }}</title>
 
@@ -28,6 +25,7 @@
 <link rel="preload" href="{{ asset('img/logo.png') }}" as="image" fetchpriority="high">
 
 @laravelPWA
+<link rel="mask-icon" href="/favicon.png" color="#FFFFFF">
 
 <script>
     function toggleDarkMode(params) {

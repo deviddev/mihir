@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'page_description' => 'Mihir.hu friss hírek, történések, események egy helyen',
     'description' => 'Leírás',
     'report' => 'Jelentés',
     'thank_you_for_reporting' => 'Köszönjük a jelentést',

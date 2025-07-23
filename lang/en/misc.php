@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'page_description' => 'Mihir.hu news, events, and more',
     'description' => 'Description',
     'report' => 'Report',
     'thank_you_for_reporting' => 'Thank you for reporting',
