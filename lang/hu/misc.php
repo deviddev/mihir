@@ -48,4 +48,7 @@ return [
     'you_are_currently_not_connected_to_any_networks' => 'Jelenleg offline vagy.',
     'light_mode' => 'Világos mód',
     'dark_mode' => 'Sötét mód',
+    'install_pwa' => 'Mihir Applikáció telepítése',
+    'install' => 'Telepítés',
+    'close' => 'Bezárás',
 ];

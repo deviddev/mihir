@@ -48,4 +48,7 @@ return [
     'you_are_currently_not_connected_to_any_networks' => 'You are currently not connected to any networks.',
     'light_mode' => 'Light Mode',
     'dark_mode' => 'Dark Mode',
+    'install_pwa' => 'Install Mihir Application',
+    'install' => 'Install',
+    'close' => 'Close',
 ];
