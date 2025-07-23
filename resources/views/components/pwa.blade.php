@@ -16,12 +16,14 @@
     let deferredPrompt;
 
     window.addEventListener("beforeinstallprompt", (e) => {
+        console.log("beforeinstallprompt fired");
         e.preventDefault();
         deferredPrompt = e;
         showInstallPopup();
     });
 
     function showInstallPopup() {
+        console.log("Showing install popup");
         document.getElementById("installPopup").classList.remove("hidden");
     }
 
