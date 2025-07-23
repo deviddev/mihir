@@ -20,7 +20,8 @@ class YoutubeMaterialData extends MaterialData
             publishedAt: Carbon::parse($item->get_date())->timezone(config('app.timezone')),
             feedId: $item->get_id(true),
             imageUrl: $item->get_enclosure()?->get_thumbnail(),
-            duration: $item->get_enclosure()?->get_duration()
+            duration: $item->get_enclosure()?->get_duration(),
+            category: $item->get_category()?->get_label(),
         );
     }
 }

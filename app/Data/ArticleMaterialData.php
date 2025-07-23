@@ -24,6 +24,7 @@ class ArticleMaterialData extends MaterialData
             publishedAt: Carbon::parse($item->get_date())->timezone(config('app.timezone')),
             feedId: $item->get_id(true),
             imageUrl: static::getImageUrl($openGraph, $item),
+            category: $item->get_category()?->get_label(),
         );
     }
 
@@ -31,7 +32,7 @@ class ArticleMaterialData extends MaterialData
     {
         return Arr::where(
             OpenGraphFacade::fetch($link, true),
-            fn ($value, $key): bool => filled($value)
+            fn($value, $key): bool => filled($value)
         );
     }
 

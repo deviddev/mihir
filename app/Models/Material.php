@@ -103,11 +103,16 @@ class Material extends Model
         return $this->belongsTo(Source::class);
     }
 
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(MaterialCategory::class);
+    }
+
     public function scopeDisplayed(Builder $query): void
     {
         $query
             ->where("{$this->getTable()}.is_displayed", 1)
-            ->whereHas('source', fn (Builder $q) => $q->displayed());
+            ->whereHas('source', fn(Builder $q) => $q->displayed());
     }
 
     public function scopeNotDisplayed(Builder $query): void

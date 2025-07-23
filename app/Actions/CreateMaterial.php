@@ -7,6 +7,7 @@ namespace App\Actions;
 use App\Data\MaterialData;
 use App\Jobs\FetchAndUpdateMaterialImage;
 use App\Models\Material;
+use App\Models\MaterialCategory;
 use App\Models\Source;
 use Illuminate\Support\Facades\DB;
 
@@ -33,6 +34,11 @@ class CreateMaterial
                     'url' => $materialData->url,
                     'image_url' => $materialData->imageUrl,
                 ]);
+
+            if ($materialData->category) {
+                $materialCategory = MaterialCategory::firstOrCreate(['name' => $materialData->category]);
+                $material->category()->associate($materialCategory);
+            }
 
             if (filled($material->image_url) && $material->isArticle()) {
                 FetchAndUpdateMaterialImage::dispatch($material)->afterCommit();

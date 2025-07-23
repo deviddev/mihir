@@ -27,7 +27,7 @@ class MaterialData
         public bool $isDisplayed = true,
         public ?int $duration = null,
         public ?string $feedId = null,
-
+        public ?string $category = null,
     ) {}
 
     public static function create(SourceType $sourceType, Item $item): static

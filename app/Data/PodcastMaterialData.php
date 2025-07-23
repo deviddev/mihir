@@ -23,7 +23,8 @@ class PodcastMaterialData extends MaterialData
             publishedAt: Carbon::parse($item->get_date())->timezone(config('app.timezone')),
             feedId: $item->get_id(true),
             imageUrl: static::getItunesTags($item, 'image')[0]['attribs']['']['href'] ?? $item->get_enclosure()?->get_thumbnail(),
-            duration: is_numeric($duration) ? (int) $duration : null
+            duration: is_numeric($duration) ? (int) $duration : null,
+            category: $item->get_category()?->get_label(),
         );
     }
 
