@@ -13,6 +13,6 @@ trait CanLoadMore
 
     public function loadMore(): void
     {
-        $this->perPage = $this->perPage > 100 ? 100 : ($this->perPage + 6);
+        $this->perPage = min($this->perPage + 6, config('feeds.max_per_page'));
     }
 }

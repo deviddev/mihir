@@ -64,8 +64,25 @@ return [
     |
     */
     'strip_html_tags.tags' => [
-        'base', 'blink', 'body', 'doctype', 'embed', 'font', 'form', 'frame', 'frameset', 'html', 'iframe', 'input',
-        'marquee', 'meta', 'noscript', 'object', 'param', 'script', 'style',
+        'base',
+        'blink',
+        'body',
+        'doctype',
+        'embed',
+        'font',
+        'form',
+        'frame',
+        'frameset',
+        'html',
+        'iframe',
+        'input',
+        'marquee',
+        'meta',
+        'noscript',
+        'object',
+        'param',
+        'script',
+        'style',
     ],
 
     /*
@@ -87,8 +104,20 @@ return [
     |
     */
     'strip_attribute.tags' => [
-        'bgsound', 'class', 'expr', 'id', 'style', 'onclick', 'onerror', 'onfinish', 'onmouseover', 'onmouseout',
-        'onfocus', 'onblur', 'lowsrc', 'dynsrc',
+        'bgsound',
+        'class',
+        'expr',
+        'id',
+        'style',
+        'onclick',
+        'onerror',
+        'onfinish',
+        'onmouseover',
+        'onmouseout',
+        'onfocus',
+        'onblur',
+        'lowsrc',
+        'dynsrc',
     ],
 
     /*
@@ -116,4 +145,5 @@ return [
     */
     'user_agent' => null,
 
+    'max_per_page' => 2500,
 ];
