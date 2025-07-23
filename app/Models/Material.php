@@ -105,7 +105,7 @@ class Material extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(MaterialCategory::class);
+        return $this->belongsTo(MaterialCategory::class, 'category_id', 'id');
     }
 
     public function scopeDisplayed(Builder $query): void
