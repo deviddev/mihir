@@ -26,6 +26,7 @@ class Categories extends Component
         $categories = Cache::remember('categories', 60 * 60, function () {
             return MaterialCategory::select(['id', 'name'])
                 ->whereHas('materials')
+                ->withCount('materials')
                 ->orderBy('materials_count', 'desc')
                 ->limit(20)
                 ->get()
