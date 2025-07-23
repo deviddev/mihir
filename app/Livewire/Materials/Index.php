@@ -30,7 +30,7 @@ class Index extends Component
         return view('livewire.materials.index', [
             'materials' => Material::displayed()
                 ->latest('published_at')
-                ->when($request->category, function ($query) use ($category) {
+                ->when($category, function ($query) use ($category) {
                     $query->where('category_id', $category->id);
                 })
                 ->select([
