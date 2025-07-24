@@ -51,6 +51,10 @@
         <div class="flex gap-x-1 text-xs opacity-70 pointer-events-none">
             <div>
                 {{ $material->published_at->inUserTimezone()->format('d M, Y H:i') }}
+                @if ($material->category)
+                    <span class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
+                        {{ $material->category->name }}</span>
+                @endif
             </div>
             @if (filled($material->duration))
                 <div>

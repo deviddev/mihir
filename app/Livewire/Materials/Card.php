@@ -21,6 +21,7 @@ class Card extends Component
         return view('livewire.materials.card', [
             'material' => Material::feedQuery()
                 ->slug($this->slug)
+                ->with('category:id,name')
                 ->firstOrFail(),
         ]);
     }

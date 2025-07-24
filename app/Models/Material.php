@@ -50,6 +50,7 @@ class Material extends Model
                 'image_url',
                 'published_at',
                 'duration',
+                'category_id',
             ])
             ->with([
                 'source:id,publisher_id,type' => [
