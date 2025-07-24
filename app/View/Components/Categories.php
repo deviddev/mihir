@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Material;
 use App\Models\MaterialCategory;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -33,6 +34,15 @@ class Categories extends Component
                 ->sortBy('name');
         });
 
-        return view('components.categories', compact('categories'));
+
+        $withoutCategory = Cache::remember('without_category', 60 * 60, function () {
+            return Material::query()
+                ->whereNull('category_id')
+                ->count();
+        });
+
+        return view('components.categories')
+            ->with('categories', $categories)
+            ->with('withoutCategory', $withoutCategory);
     }
 }

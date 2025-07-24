@@ -4,4 +4,9 @@
             class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">{{ $category->name }}
             <small>({{ $category->materials_count }})</small></a>
     @endforeach
+    @if ($withoutCategory > 0)
+        <a href="{{ route('materials.index', ['category' => 'without-category']) }}"
+            class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">{{ __('misc.without_category') }}
+            <small>({{ $withoutCategory }})</small></a>
+    @endif
 </div>
