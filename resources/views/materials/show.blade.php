@@ -45,6 +45,14 @@
                         {{ Carbon\CarbonInterval::seconds($material->duration)->cascade()->forHumans(['short' => true]) }}
                     </div>
                 @endif
+                @if ($material->category)
+                    <div class="mt-1">
+                        <a href="{{ route('home.category', ['category' => $material->category->slug]) }}"
+                            class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded text-xs">
+                            {{ $material->category->name }}
+                        </a>
+                    </div>
+                @endif
             </div>
             <h1 class="font-bold text-2xl lg:text-3xl">
                 {!! $material->title !!}
@@ -53,39 +61,6 @@
                 {!! str($material->description)->stripTags() !!}
             </h2>
         </div>
-        @if (Str::wordCount($material->body) >= 40)
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-x-2 lg:gap-x-6">
-                    <div class="relative lg:tooltip" x-bind:class="{ 'lg:tooltip-open': isCopied }"
-                        x-bind:data-tip="isCopied && 'Link Copied!'" x-data="copyLink('{{ $material->url }}')">
-                        <button class="flex items-center" x-on:click="copy">
-                            <x-heroicon-o-link class="inline-flex lg:size-8 size-6 hover:stroke-primary"
-                                x-bind:class="{
-                                    'stroke-primary': isCopied,
-                                    'stroke-stone-800 dark:stroke-stone-300': !isCopied
-                                }" />
-                        </button>
-                    </div>
-                </div>
-                @if ($material->category)
-                    <a href="{{ route('home.category', ['category' => $material->category->slug]) }}"
-                        class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
-                        {{ $material->category->name }}
-                    </a>
-                @endif
-                @if ($material->isArticle())
-                    <div>
-                        <a class="btn max-lg:btn-sm max-lg:text-xs btn-primary btn-outline hover:!text-white"
-                            href="{{ $material->urlWithUtms }}" target="_blank">
-                            <x-heroicon-o-arrow-top-right-on-square class="lg:size-6 size-4" />
-                            <span>
-                                {{ __('misc.read_post') }}
-                            </span>
-                        </a>
-                    </div>
-                @endif
-            </div>
-        @endif
         @if ($material->isArticle())
             <figure>
                 <img loading="lazy" src="{{ $material->thumbnail }}" alt=""
@@ -93,51 +68,38 @@
             </figure>
             <div
                 class="prose prose-img:hidden prose-figure:hidden prose-video:hidden dark:text-stone-400 dark:prose-a:text-stone-500 dark:prose-headings:text-stone-300">
-                {!! $material->body . '..' !!}
+                {!! str($material->body)->words(50) !!}
             </div>
-            @if ($material->isArticle())
-                <a class="text-primary flex items-center gap-x-1" href="{{ $material->urlWithUtms }}" target="_blank">
-                    {{ __('misc.read_more') }} <x-heroicon-o-arrow-top-right-on-square class="size-4" />
-                </a>
-            @endif
         @elseif ($material->isYoutube())
             <x-youtube-player :material="$material" />
         @elseif ($material->isPodcast())
             <x-podcast-player :material="$material" />
         @endif
 
-        @if (Str::wordCount($material->body) < 40)
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-x-2 lg:gap-x-6">
-                    <div class="relative lg:tooltip" x-bind:class="{ 'lg:tooltip-open': isCopied }"
-                        x-bind:data-tip="isCopied && 'Link Copied!'" x-data="copyLink('{{ $material->url }}')">
-                        <button class="flex items-center" x-on:click="copy">
-                            <x-heroicon-o-link class="inline-flex lg:size-8 size-6 hover:stroke-primary"
-                                x-bind:class="{
-                                    'stroke-primary': isCopied,
-                                    'stroke-stone-800 dark:stroke-stone-300': !isCopied
-                                }" />
-                        </button>
-                    </div>
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-x-2 lg:gap-x-6">
+                <div class="relative lg:tooltip" x-bind:class="{ 'lg:tooltip-open': isCopied }"
+                    x-bind:data-tip="isCopied && 'Link Copied!'" x-data="copyLink('{{ $material->url }}')">
+                    <button class="flex items-center" x-on:click="copy">
+                        <x-heroicon-o-link class="inline-flex lg:size-8 size-6 hover:stroke-primary"
+                            x-bind:class="{
+                                'stroke-primary': isCopied,
+                                'stroke-stone-800 dark:stroke-stone-300': !isCopied
+                            }" />
+                    </button>
                 </div>
-                @if ($material->category)
-                    <a href="{{ route('home.category', ['category' => $material->category->slug]) }}"
-                        class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
-                        {{ $material->category->name }}
-                    </a>
-                @endif
-                @if ($material->isArticle())
-                    <div>
-                        <a class="btn max-lg:btn-sm max-lg:text-xs btn-primary btn-outline hover:!text-white"
-                            href="{{ $material->urlWithUtms }}" target="_blank">
-                            <x-heroicon-o-arrow-top-right-on-square class="lg:size-6 size-4" />
-                            <span>
-                                {{ __('misc.read_post') }}
-                            </span>
-                        </a>
-                    </div>
-                @endif
             </div>
-        @endif
+            @if ($material->isArticle())
+                <div>
+                    <a class="btn max-lg:btn-sm max-lg:text-xs btn-primary btn-outline hover:!text-white"
+                        href="{{ $material->urlWithUtms }}" target="_blank">
+                        <x-heroicon-o-arrow-top-right-on-square class="lg:size-6 size-4" />
+                        <span>
+                            {{ __('misc.read_more') }}
+                        </span>
+                    </a>
+                </div>
+            @endif
+        </div>
     </div>
 </x-layouts.guest>
