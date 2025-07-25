@@ -53,6 +53,39 @@
                 {!! str($material->description)->stripTags() !!}
             </h2>
         </div>
+        @if (Str::wordCount($material->body) >= 40)
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-x-2 lg:gap-x-6">
+                    <div class="relative lg:tooltip" x-bind:class="{ 'lg:tooltip-open': isCopied }"
+                        x-bind:data-tip="isCopied && 'Link Copied!'" x-data="copyLink('{{ $material->url }}')">
+                        <button class="flex items-center" x-on:click="copy">
+                            <x-heroicon-o-link class="inline-flex lg:size-8 size-6 hover:stroke-primary"
+                                x-bind:class="{
+                                    'stroke-primary': isCopied,
+                                    'stroke-stone-800 dark:stroke-stone-300': !isCopied
+                                }" />
+                        </button>
+                    </div>
+                </div>
+                @if ($material->category)
+                    <a href="{{ route('home.category', ['category' => $material->category->slug]) }}"
+                        class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
+                        {{ $material->category->name }}
+                    </a>
+                @endif
+                @if ($material->isArticle())
+                    <div>
+                        <a class="btn max-lg:btn-sm max-lg:text-xs btn-primary btn-outline hover:!text-white"
+                            href="{{ $material->urlWithUtms }}" target="_blank">
+                            <x-heroicon-o-arrow-top-right-on-square class="lg:size-6 size-4" />
+                            <span>
+                                {{ __('misc.read_post') }}
+                            </span>
+                        </a>
+                    </div>
+                @endif
+            </div>
+        @endif
         @if ($material->isArticle())
             <figure>
                 <img loading="lazy" src="{{ $material->thumbnail }}" alt=""
@@ -68,36 +101,38 @@
             <x-podcast-player :material="$material" />
         @endif
 
-        <div class="flex justify-between items-center">
-            <div class="flex items-center gap-x-2 lg:gap-x-6">
-                <div class="relative lg:tooltip" x-bind:class="{ 'lg:tooltip-open': isCopied }"
-                    x-bind:data-tip="isCopied && 'Link Copied!'" x-data="copyLink('{{ $material->url }}')">
-                    <button class="flex items-center" x-on:click="copy">
-                        <x-heroicon-o-link class="inline-flex lg:size-8 size-6 hover:stroke-primary"
-                            x-bind:class="{
-                                'stroke-primary': isCopied,
-                                'stroke-stone-800 dark:stroke-stone-300': !isCopied
-                            }" />
-                    </button>
+        @if (Str::wordCount($material->body) < 40)
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-x-2 lg:gap-x-6">
+                    <div class="relative lg:tooltip" x-bind:class="{ 'lg:tooltip-open': isCopied }"
+                        x-bind:data-tip="isCopied && 'Link Copied!'" x-data="copyLink('{{ $material->url }}')">
+                        <button class="flex items-center" x-on:click="copy">
+                            <x-heroicon-o-link class="inline-flex lg:size-8 size-6 hover:stroke-primary"
+                                x-bind:class="{
+                                    'stroke-primary': isCopied,
+                                    'stroke-stone-800 dark:stroke-stone-300': !isCopied
+                                }" />
+                        </button>
+                    </div>
                 </div>
-            </div>
-            @if ($material->category)
-                <a href="{{ route('home.category', ['category' => $material->category->slug]) }}"
-                    class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
-                    {{ $material->category->name }}
-                </a>
-            @endif
-            @if ($material->isArticle())
-                <div>
-                    <a class="btn max-lg:btn-sm max-lg:text-xs btn-primary btn-outline hover:!text-white"
-                        href="{{ $material->urlWithUtms }}" target="_blank">
-                        <x-heroicon-o-arrow-top-right-on-square class="lg:size-6 size-4" />
-                        <span>
-                            {{ __('misc.read_post') }}
-                        </span>
+                @if ($material->category)
+                    <a href="{{ route('home.category', ['category' => $material->category->slug]) }}"
+                        class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
+                        {{ $material->category->name }}
                     </a>
-                </div>
-            @endif
-        </div>
+                @endif
+                @if ($material->isArticle())
+                    <div>
+                        <a class="btn max-lg:btn-sm max-lg:text-xs btn-primary btn-outline hover:!text-white"
+                            href="{{ $material->urlWithUtms }}" target="_blank">
+                            <x-heroicon-o-arrow-top-right-on-square class="lg:size-6 size-4" />
+                            <span>
+                                {{ __('misc.read_post') }}
+                            </span>
+                        </a>
+                    </div>
+                @endif
+            </div>
+        @endif
     </div>
 </x-layouts.guest>
