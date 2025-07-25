@@ -9,7 +9,7 @@ class MaterialController
     public function show(string $year, string $month, Material $material)
     {
         return view('materials.show', [
-            'material' => $material,
+            'material' => $material->load('category:id,name,slug'),
         ]);
     }
 }

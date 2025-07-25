@@ -24,6 +24,7 @@ class Bookmarks extends Component
                     'id',
                     'slug',
                     'published_at',
+                    'title_slug',
                 ])
                 ->cursorPaginate($this->perPage),
         ]);

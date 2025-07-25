@@ -51,6 +51,7 @@ class Material extends Model
                 'published_at',
                 'duration',
                 'category_id',
+                'title_slug',
             ])
             ->with([
                 'source:id,publisher_id,type' => [

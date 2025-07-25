@@ -3,12 +3,8 @@
 <article x-data
     class="relative flex flex-col border-2 border-accent dark:border-stone-800 hover:border-primary cursor-pointer p-4 rounded-xl"
     x-intersect.once.full="$wire.viewed()">
-    <a class="absolute size-full inset-0" href="{{ route('materials.show', $material->slug) }}"
-        x-on:click.prevent="() => {
-            $dispatch('open-material-modal', {
-                slug: '{{ $material->slug }}'
-            });
-        }"></a>
+    <a class="absolute size-full inset-0"
+        href="{{ route('home.material', [$material->published_at->year, $material->published_at->month, $material->title_slug]) }}"></a>
     <div class="flex flex-col h-full space-y-4">
         <div class="flex justify-between items-center">
             <div class="avatar">

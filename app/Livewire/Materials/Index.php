@@ -33,16 +33,11 @@ class Index extends Component
                 ->when($category, function ($query) use ($category) {
                     $query->where('category_id', $category->id);
                 })
-                ->when($request->year, function ($query) use ($request) {
-                    $query->whereYear('published_at', $request->year);
-                })
-                ->when($request->month, function ($query) use ($request) {
-                    $query->whereMonth('published_at', $request->month);
-                })
                 ->select([
                     'id',
                     'slug',
                     'published_at',
+                    'title_slug',
                 ])
                 ->cursorPaginate($this->perPage),
         ]);
