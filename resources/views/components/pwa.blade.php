@@ -13,36 +13,38 @@
 </div>
 
 <script>
-    let deferredPrompt;
+    if (!window.deferredPrompt) {
+        window.deferredPrompt = null;
 
-    window.addEventListener("beforeinstallprompt", (e) => {
-        console.log("beforeinstallprompt fired");
-        e.preventDefault();
-        deferredPrompt = e;
-        showInstallPopup();
-    });
+        window.addEventListener("beforeinstallprompt", (e) => {
+            console.log("beforeinstallprompt fired");
+            e.preventDefault();
+            window.deferredPrompt = e;
+            showInstallPopup();
+        });
 
-    function showInstallPopup() {
-        console.log("Showing install popup");
-        document.getElementById("installPopup").classList.remove("hidden");
-    }
-
-    function closeInstallPopup() {
-        document.getElementById("installPopup").classList.add("hidden");
-    }
-
-    document.getElementById("installBtn").addEventListener("click", async () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const {
-                outcome
-            } = await deferredPrompt.userChoice;
-            deferredPrompt = null;
-            closeInstallPopup();
+        function showInstallPopup() {
+            console.log("Showing install popup");
+            document.getElementById("installPopup").classList.remove("hidden");
         }
-    });
 
-    window.addEventListener("appinstalled", () => {
-        closeInstallPopup();
-    });
+        function closeInstallPopup() {
+            document.getElementById("installPopup").classList.add("hidden");
+        }
+
+        document.getElementById("installBtn").addEventListener("click", async () => {
+            if (window.deferredPrompt) {
+                window.deferredPrompt.prompt();
+                const {
+                    outcome
+                } = await window.deferredPrompt.userChoice;
+                window.deferredPrompt = null;
+                closeInstallPopup();
+            }
+        });
+
+        window.addEventListener("appinstalled", () => {
+            closeInstallPopup();
+        });
+    }
 </script>
