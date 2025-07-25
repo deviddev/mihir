@@ -24,7 +24,7 @@ test('privacy policy page is rendered successfully', function () {
 
 test('feed page is rendered successfully', function () {
     $this
-        ->get(route('materials.index'))
+        ->get(route('home'))
         ->assertStatus(200)
         ->assertSee(view('components.sidemenu'));
 });

@@ -23,7 +23,7 @@ test('password can be confirmed', function () {
         ->test(ConfirmPassword::class)
         ->set('password', 'password')
         ->call('confirmPassword')
-        ->assertRedirect(route('materials.index', absolute: false))
+        ->assertRedirect(route('home', absolute: false))
         ->assertHasNoErrors();
 });
 

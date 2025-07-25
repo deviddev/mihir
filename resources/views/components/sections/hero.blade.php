@@ -49,7 +49,7 @@
                 <div class="flex gap-x-2 justify-center">
                     <a wire:navigate
                         class="btn lg:btn-lg btn-outline text-primary hover:bg-primary hover:border-primary"
-                        href="{{ route('materials.index') }}">
+                        href="{{ route('home') }}">
                         <x-heroicon-o-newspaper class="inline size-8" />
                         Feed
                     </a>

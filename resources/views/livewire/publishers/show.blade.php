@@ -2,7 +2,7 @@
     <div class="breadcrumbs text-sm mb-4 pt-0">
         <ul>
             <li>
-                <a href="{{ route('materials.index') }}" wire:navigate>
+                <a href="{{ route('home') }}" wire:navigate>
                     Home
                 </a>
             </li>

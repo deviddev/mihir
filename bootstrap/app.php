@@ -20,7 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
             CookieConsentMiddleware::class,
         ]);
 
-        $middleware->redirectUsersTo(fn() => route('materials.index'));
+        $middleware->redirectUsersTo(fn() => route('home'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

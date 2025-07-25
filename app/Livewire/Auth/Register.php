@@ -57,7 +57,7 @@ class Register extends Component
 
         Auth::login($user);
 
-        $this->redirect(route('materials.index', absolute: false), navigate: true);
+        $this->redirect(route('home', absolute: false), navigate: true);
     }
 
     public function render()

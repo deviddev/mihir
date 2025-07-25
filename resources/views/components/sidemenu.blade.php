@@ -1,19 +1,16 @@
 <div class="w-1/5 max-lg:hidden">
     <div class="fixed py-6 flex flex-col space-y-12 h-screen w-fit">
         <figure class="h-12 flex items-center">
-            <a wire:navigate href="{{ auth()->check() ? route('materials.index') : route('home') }}">
+            <a wire:navigate href="{{ auth()->check() ? route('home') : route('home') }}">
                 <img loading="lazy" class="sm:w-52 w-48 p-4" src="{{ asset('img/logo.png') }}" alt="Mihir logo">
             </a>
         </figure>
         <div class="space-y-4">
-            <a wire:navigate href="{{ route('materials.index') }}" @class([
+            <a wire:navigate href="{{ route('home') }}" @class([
                 'flex items-center gap-x-3 p-3 font-semibold',
-                'bg-primary text-white rounded-btn' => request()->routeIs([
-                    'feed',
-                    'materials.index',
-                ]),
+                'bg-primary text-white rounded-btn' => request()->routeIs(['feed', 'home']),
                 'hover:bg-accent dark:hover:bg-stone-900 hover:rounded' => !request()->routeIs(
-                    ['feed', 'materials.index']),
+                    ['feed', 'home']),
             ])>
                 <x-heroicon-o-home class="inline-block size-6" />
                 <span>

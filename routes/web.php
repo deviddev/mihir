@@ -10,8 +10,6 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', Livewire\Materials\Index::class)->name('home');
 
-Route::get('home', Livewire\Materials\Index::class)->name('materials.index');
-
 Route::view('terms-and-conditions', 'terms')->name('terms');
 
 Route::view('privacy-policy', 'privacy-policy')->name('privacy');
