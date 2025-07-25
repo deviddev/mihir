@@ -82,8 +82,10 @@
                 </div>
             </div>
             @if ($material->category)
-                <span class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
-                    {{ $material->category->name }}</span>
+                <a href="{{ route('home.category', ['category' => $material->category->slug]) }}"
+                    class="bg-secondary dark:bg-secondary/50 text-white px-2 py-1 rounded">
+                    {{ $material->category->name }}
+                </a>
             @endif
             @if ($material->isArticle())
                 <div>

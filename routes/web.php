@@ -34,7 +34,8 @@ Route::view('privacy-policy', 'privacy-policy')->name('privacy');
 Route::get('feed/{type}', Livewire\FeedBySourceType::class)
     ->name('feed.type');
 
-Route::get('/', Livewire\Materials\Index::class)->name('home');
 Route::get('/{year}/{month}/{material:title_slug}', [MaterialController::class, 'show'])->name('home.material');
+Route::get('/kategoria/{category:slug}', Livewire\Materials\Index::class)->name('home.category');
+Route::get('/', Livewire\Materials\Index::class)->name('home');
 
 Route::post('update-timezone', UpdateUserTimezoneController::class)->name('timezone.update');
