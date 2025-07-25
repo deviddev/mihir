@@ -93,8 +93,15 @@
             </figure>
             <div
                 class="prose prose-img:hidden prose-figure:hidden prose-video:hidden dark:text-stone-400 dark:prose-a:text-stone-500 dark:prose-headings:text-stone-300">
-                {!! $material->body !!}
+                {!! $material->body !!}...
             </div>
+            @if ($material->isArticle())
+                <a class="max-lg:text-xs text-primary" href="{{ $material->urlWithUtms }}" target="_blank">
+                    <span>
+                        {{ __('misc.read_more') }}...
+                    </span>
+                </a>
+            @endif
         @elseif ($material->isYoutube())
             <x-youtube-player :material="$material" />
         @elseif ($material->isPodcast())
