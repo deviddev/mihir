@@ -98,7 +98,7 @@
             @if ($material->isArticle())
                 <a class="max-lg:text-xs text-primary" href="{{ $material->urlWithUtms }}" target="_blank">
                     <span>
-                        {{ __('misc.read_more') }}...
+                        {{ __('misc.read_more') . '..' }}
                     </span>
                 </a>
             @endif
