@@ -34,15 +34,7 @@ class Categories extends Component
                 ->sortBy('name');
         });
 
-
-        $withoutCategory = Cache::remember('without_category', 60 * 60, function () {
-            return Material::query()
-                ->whereNull('category_id')
-                ->count();
-        });
-
         return view('components.categories')
-            ->with('categories', $categories)
-            ->with('withoutCategory', $withoutCategory);
+            ->with('categories', $categories);
     }
 }
