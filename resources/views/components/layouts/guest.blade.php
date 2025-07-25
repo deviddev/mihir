@@ -40,6 +40,7 @@
     @vite('resources/js/app.js')
     <x-update-timezone />
     @stack('scripts')
+    <x-pwa />
 </body>
 
 </html>

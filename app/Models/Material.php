@@ -150,6 +150,15 @@ class Material extends Model
     {
         static::creating(function (Material $material) {
             $material->slug = Str::random();
+            $baseSlug = Str::slug(str($material->title)->words(15));
+            $slug = $baseSlug;
+            $counter = 1;
+
+            while (Material::where('title_slug', $slug)->exists()) {
+                $slug = $baseSlug . '-' . $counter++;
+            }
+
+            $material->title_slug = $slug;
         });
     }
 
