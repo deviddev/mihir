@@ -28,17 +28,19 @@ class AddSlugToExistingArticles extends Command
     public function handle()
     {
         Material::whereNull('title_slug')
-            ->each(function (Material $material) {
-                $baseSlug = Str::slug(str($material->title)->words(15));
-                $slug = $baseSlug;
-                $counter = 1;
+            ->chunkById(100, function ($materials) {
+                $materials->each(function (Material $material) {
+                    $baseSlug = Str::slug(str($material->title)->words(15));
+                    $slug = $baseSlug;
+                    $counter = 1;
 
-                while (Material::where('title_slug', $slug)->exists()) {
-                    $slug = $baseSlug . '-' . $counter++;
-                }
+                    while (Material::where('title_slug', $slug)->exists()) {
+                        $slug = $baseSlug . '-' . $counter++;
+                    }
 
-                $material->title_slug = $slug;
-                $material->save();
+                    $material->title_slug = $slug;
+                    $material->save();
+                });
             });
     }
 }
