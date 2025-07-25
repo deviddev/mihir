@@ -93,13 +93,11 @@
             </figure>
             <div
                 class="prose prose-img:hidden prose-figure:hidden prose-video:hidden dark:text-stone-400 dark:prose-a:text-stone-500 dark:prose-headings:text-stone-300">
-                {!! $material->body !!}...
+                {!! $material->body . '..' !!}
             </div>
             @if ($material->isArticle())
-                <a class="max-lg:text-xs text-primary" href="{{ $material->urlWithUtms }}" target="_blank">
-                    <span>
-                        {{ __('misc.read_more') . '..' }}
-                    </span>
+                <a class="text-primary flex items-center gap-x-1" href="{{ $material->urlWithUtms }}" target="_blank">
+                    {{ __('misc.read_more') }} <x-heroicon-o-arrow-top-right-on-square class="size-4" />
                 </a>
             @endif
         @elseif ($material->isYoutube())
