@@ -7,3 +7,5 @@ use Illuminate\Support\Facades\Schedule;
 Schedule::command('larasense:bot')->withoutOverlapping()->everyFiveMinutes();
 
 Schedule::command('queue:prune-failed')->daily();
+
+Schedule::command('app:build-sitemap')->daily();

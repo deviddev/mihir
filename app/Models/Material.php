@@ -16,8 +16,11 @@ use Maize\Markable\Markable;
 use Maize\Markable\Models\Bookmark;
 use Maize\Markable\Models\Like;
 use Maize\Markable\Models\Reaction;
+use Spatie\Sitemap\Contracts\Sitemapable;
+use Spatie\Sitemap\Tags\Url;
+use Carbon\Carbon;
 
-class Material extends Model
+class Material extends Model implements Sitemapable
 {
     /** @use HasFactory<\Database\Factories\MaterialFactory> */
     use HasFactory, Markable;
@@ -171,5 +174,13 @@ class Material extends Model
             'duration' => 'integer',
             'duplicate_sources' => 'array',
         ];
+    }
+
+    public function toSitemapTag(): Url|string|array
+    {
+        return Url::create(route('home.material', ['year' => $this->published_at->year, 'month' => $this->published_at->month, 'material' => $this->title_slug]))
+            ->setLastModificationDate(Carbon::create($this->updated_at))
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY)
+            ->setPriority(0.1);
     }
 }

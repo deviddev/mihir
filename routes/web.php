@@ -31,7 +31,7 @@ Route::view('terms-and-conditions', 'terms')->name('terms');
 
 Route::view('privacy-policy', 'privacy-policy')->name('privacy');
 
-Route::get('feed/{type}', Livewire\FeedBySourceType::class)
+Route::get('tipus/{type}', Livewire\FeedBySourceType::class)
     ->name('feed.type');
 
 Route::get('/{year}/{month}/{material:title_slug}', [MaterialController::class, 'show'])->name('home.material');
