@@ -169,6 +169,7 @@ class Material extends Model
             'is_displayed' => 'boolean',
             'published_at' => 'datetime',
             'duration' => 'integer',
+            'duplicate_sources' => 'array',
         ];
     }
 }
